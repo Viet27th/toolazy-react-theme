@@ -26,7 +26,6 @@
     "url": "https://github.com/Viet27th/toolazy-react-theme/issues"
   },
   "homepage": "https://github.com/Viet27th/toolazy-react-theme#readme",
-  "publishConfig": { "registry": "https://npm.pkg.github.com/" },
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
     "react": "^17.0.1"

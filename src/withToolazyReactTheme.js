@@ -1,3 +1,11 @@
+/**
+ * References:
+ * - https://reactjs.org/docs/higher-order-components.html
+ * - https://reactjs.org/docs/hooks-custom.html
+ * - https://reactjs.org/docs/forwarding-refs.html#forwarding-refs-in-higher-order-components
+ * - https://reactjs.org/docs/higher-order-components.html#convention-wrap-the-display-name-for-easy-debugging
+ */
+
 import React from 'react';
 import {getDisplayName} from './utils';
 import {useToolazyReactTheme} from './useToolazyReactTheme';

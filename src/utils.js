@@ -18,7 +18,7 @@ class toolazyReactThemeClass {
 
   /**
    *
-   * @param {string} theme - Set current theme value and make all components are using withToolazyReactTheme() HOC update state
+   * @param {string} theme - Set currentTheme value and make all components are using withToolazyReactTheme() HOC update state
    */
   changeTheme(theme) {
     toolazyReactThemeStore.currentTheme = theme;
@@ -65,7 +65,7 @@ export function getCurrentTheme() {
 }
 
 /**
- * @returns {object} - Is an theme object that you're using.
+ * @returns {object} - Is a theme object that you're using.
  */
 export function getTheme() {
   return toolazyReactThemeStore.themesResource[

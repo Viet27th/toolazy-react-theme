@@ -6,7 +6,7 @@
 > Theme manager for React and React Native projects.
 
 # Quick start
-We expect you having an existing react application - if not give [create-react-app](https://github.com/facebook/create-react-app) a try.
+We expect you having an existing react application - if not give [create-react-app](https://github.com/facebook/create-react-app) / [Create react native](https://reactnative.dev/docs/environment-setup) a try.
 
 ### Installation
 toolazy-react-theme is delivered primarily via npm
@@ -70,8 +70,8 @@ class MyComponent extends React.Component {
  }
  render() {
   console.log(this.props); // You theme should be here.
-  
-  return <Text>Hi friend</Text>
+  const {theme} = this.props;
+  return <Text style={{color: theme.tabBarActive}}>Hi friend</Text>
  }
 }
 
@@ -90,7 +90,7 @@ import {withToolazyReactTheme} from 'toolazy-react-theme';
 const MyComponent = (props) => {
   return (
    <>
-    <Text>Hi friend</Text>
+    <Text style={{color: props.theme.tabBarActive}}>Hi friend</Text>
    </>
   );
 }

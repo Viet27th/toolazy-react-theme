@@ -31,6 +31,13 @@
  * projects install your library, all libraries in peerDependencies angle bracket will be install.
  * In other words, the code that includes your library must include all 
  * libraries below peerDependencies as its dependency.
+ * 
+ * + Remove "react dependency" below "dependencies angle bracket" of package.json, if not, when other project
+ * install your library, it will create a new node_modules inside your library and lead to error.
+ * Assum: Project A install your library, react version in your project A is 16.3.1 but in package.json of
+ * your library, look at to "dependencies", your library are using React higher version. Your library will
+ * auto-install react with a higher version and make a node_modules inside itself. So you should remove all
+ * dependencies of your library if possible
  */
 export {toolazyReactTheme} from './utils';
 export {withToolazyReactTheme} from './withToolazyReactTheme';

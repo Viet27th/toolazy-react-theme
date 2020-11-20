@@ -1,4 +1,5 @@
 const path = require('path');
+const pkg = require('./package.json');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
@@ -6,7 +7,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: path.resolve(__dirname, 'dist'),
-    library: "toolazy-react-theme",   // Important
+    library: pkg.name,   // Important
     libraryTarget: 'umd',   // Important
     umdNamedDefine: true   // Important
   },
@@ -56,9 +57,9 @@ module.exports = {
   // This config for doing that.
   resolve: {
     alias: {
-      react: path.resolve('./node_modules/react'),
-      ReactDOM: path.resolve('./node_modules/react-dom'),
-      PropTypes: path.resolve('./node_modules/prop-types'),
+      react: path.resolve(__dirname, 'node_modules/react'),
+      ReactDOM: path.resolve(__dirname, 'node_modules/react-dom'),
+      PropTypes: path.resolve(__dirname, 'node_modules/prop-types'),
     }
   }
 };

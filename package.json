@@ -1,7 +1,7 @@
 {
   "name": "toolazy-react-theme",
-  "version": "1.0.0",
-  "description": "Theme manager for react apps",
+  "version": "1.0.18",
+  "description": "Theme manager for React and React Native projects.",
   "main": "dist/index.js",
   "scripts": {
     "start": "webpack",
@@ -18,17 +18,20 @@
     "React Theme",
     "Theme Manager library for react app",
     "react theme manager",
-    "Theme react"
+    "Theme react",
+    "react",
+    "reactjs",
+    "react native"
   ],
   "author": "Vieth27th@gmail.com",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/Viet27th/toolazy-react-theme/issues"
   },
   "homepage": "https://github.com/Viet27th/toolazy-react-theme#readme",
   "dependencies": {
     "@babel/polyfill": "^7.12.1",
-    "react": "^17.0.1"
+    "react": "^16.8.0"
   },
   "devDependencies": {
     "@babel/core": "^7.12.3",
@@ -43,7 +46,6 @@
     "webpack-cli": "^4.2.0"
   },
   "peerDependencies": {
-    "react": "^16.13.1",
-    "prop-types": "^15.7.2"
+    "react": ">= 16.8.0"
   }
 }

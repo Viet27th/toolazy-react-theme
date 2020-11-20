@@ -9,7 +9,7 @@
 We expect you having an existing react application - if not give [create-react-app](https://github.com/facebook/create-react-app) a try.
 
 ### Installation
-toolazy-react-theme is delivered primarily via npm. [[[assets.images/npm.png|width=50px]]](https://www.npmjs.com/package/toolazy-react-theme) (<https://www.npmjs.com/package/toolazy-react-theme>)
+toolazy-react-theme is delivered primarily via npm. [[[assets/images/npm.png|width=50px]]](https://www.npmjs.com/package/toolazy-react-theme) (<https://www.npmjs.com/package/toolazy-react-theme>)
 ```sh
 # using npm install
 $ npm i toolazy-react-theme

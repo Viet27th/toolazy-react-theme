@@ -7,8 +7,9 @@
 
 # Quick start
 We expect you having an existing react application - if not give [create-react-app](https://github.com/facebook/create-react-app) / [Create react native](https://reactnative.dev/docs/environment-setup) a try.
+I will show you step-by-step to use this library.
 
-### Installation
+### First: Installation
 toolazy-react-theme is delivered primarily via npm
 <a href="https://www.npmjs.com/package/toolazy-react-theme">
   <img src="assets/images/npm.png" width=25 height=25>
@@ -18,7 +19,7 @@ toolazy-react-theme is delivered primarily via npm
 # using npm install
 $ npm i toolazy-react-theme
 ```
-### Configure toolazy-react-theme
+### Second: Configure toolazy-react-theme
 Create a new file ```theme.js``` beside your ```index.js``` containing following content:
 ```js
 import {toolazyReactTheme} from 'toolazy-react-theme';
@@ -54,7 +55,7 @@ AppRegistry.registerComponent(appName, () => App);
 ```
 Everything is ready, but how to use it? Let's go...
 
-### Usage example
+### Third: Usage example
 The components you need to use `theme` variable must be wrapped by `withToolazyReactTheme` HOC.
 
 With Class component:
@@ -99,7 +100,7 @@ const MyComponent = (props) => {
 export default withToolazyReactTheme()(MyComponent);
 ```
 
-### Change theme
+### Fourth: Change theme
 The interesting part here is ```Theme.changeTheme(theme)``` which will make current theme you pass available for all the components wrapped by withToolazyReactTheme()(MyComponent)
 
 At the Configure step, you have been created a config file called ```theme.js```, you can import to anywhere and use it:
@@ -119,7 +120,7 @@ class MyComponent extends React.Component {
       <Button 
         onPress={
           () => {
-            toolazyReactTheme.changeTheme(Theme.getCurrentTheme() === 'light'? 'dark' : 'light');
+            Theme.changeTheme(Theme.getCurrentTheme() === 'light'? 'dark' : 'light');
           }
         } 
         title={'Press me to Change Your Theme'} 
@@ -131,15 +132,77 @@ class MyComponent extends React.Component {
 }
 ```
 
-## Methods
+### Methods
 
 | Methods | Description |
 | :---: | --- |
-| `Theme.changeTheme(theme)` | `theme`: `String` Ex: `'dark'` or `'light'`<br/> &nbsp; This function make your app change `theme` variable and apply to all the components wrapped by `withToolazyReactTheme` Higher-order Component |
+| `Theme.changeTheme(theme)` | `theme`: `String` Ex: `'dark'` or `'light'`<br/> &nbsp;This function make your app change `theme` variable and apply to all the components wrapped by `withToolazyReactTheme` Higher-order Component |
 | `Theme.getThemesResource()` | Return your theme resource. It's an object. |
 | `Theme.getCurrentTheme()` | Return the current theme name. It's a string. |
 | `Theme.getTheme()` | Return the theme you're using. It's an object |
 
+
+# Tips Tricks
+You no need to use Redux to manage your themes. Say no to `connect()` `mapStateToProps` `mapDispatchToProps` if it's not needed. </br>
+You can `import Theme from 'path/to/theme.js'` and use all methods above.
+
+### Tip 1: Detect your theme has been changed.
+Let's say you have 2 components called **MyComponent** and **ToggleComponent**
+**MyComponent** is using `theme` and **ToogleComponent** is not.
+**ToggleComponent** make a change theme action. You need to detect and do something in **MyComponent**.
+
+**toogle-component.js**
+```js
+
+import React from 'react';
+import Theme from 'path/to/theme.js';
+
+const ToggleComponent = () => {
+  return (
+    <Button 
+      onPress={
+        () => {
+          Theme.changeTheme(Theme.getCurrentTheme() === 'light'? 'dark' : 'light');
+        }
+      } 
+      title={'Press me to Change Your Theme'} 
+    />
+  );
+}
+
+export default ToggleComponent
+
+```
+
+**my-component.js**
+```js
+
+import React, {useEffect, useRef} from 'react';
+import {Text} from 'react-native';
+import {withToolazyReactTheme} from 'toolazy-react-theme';
+
+const MyComponent = (props) => {
+  const previousTheme = useRef(props.theme);
+  useEffect(() => {
+    if (previousTheme.current !== props.theme) {
+      console.log('Theme in MyComponent updated');
+    }
+    previousTheme.current = props.theme;
+  });
+
+  return (
+    <>
+      <Text style={{color: props.theme.tabBarActive}}>Hi friend</Text>
+    </>
+  );
+};
+
+export default withToolazyReactTheme()(MyComponent);
+```
+
+As you can see, we have two separate components but When you click on the "Press me to Change Your Theme" button, `theme` will be changed and **MyComponet** updated. <br/>
+You can detect that change by using `useRef` and `useEffect` like above if it's React function component or you can <br/>
+use `componentDidUpdate(prevProps)` for React class component and compare `if(prevProps.theme !== this.props.theme)` as well. <br/>
 
 &nbsp;
 &nbsp;

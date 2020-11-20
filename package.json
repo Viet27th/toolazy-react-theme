@@ -1,6 +1,6 @@
 {
   "name": "toolazy-react-theme",
-  "version": "1.0.24",
+  "version": "1.0.25",
   "description": "Theme manager for React and React Native projects.",
   "main": "dist/index.js",
   "scripts": {
@@ -14,8 +14,13 @@
   },
   "keywords": [
     "toolazyReactTheme",
+    "toolazy react theme",
     "react theme",
-    "React Theme",
+    "react native theme",
+    "manage theme for react",
+    "theme manager for react",
+    "manage theme for react native",
+    "theme manager for react native",
     "Theme Manager library for react app",
     "react theme manager",
     "Theme react",

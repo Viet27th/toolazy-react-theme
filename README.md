@@ -146,14 +146,14 @@ class MyComponent extends React.Component {
 
 # Tips Tricks
 You no need to use Redux to manage your themes. Say no to `connect()` `mapStateToProps` `mapDispatchToProps` if it's not needed. </br>
-You can `import Theme from 'path/to/theme.js'` and use all methods above.
+You can `import Theme from 'path/to/theme.js'` everywhere and use all methods above.
 
 ### Tip 1: Detect your theme has been changed.
 Let's say you have 2 components called **MyComponent** and **ToggleComponent**. <br/>
 **MyComponent** is using `theme` and **ToogleComponent** is not. <br/>
 **ToggleComponent** make a change theme action. You need to detect and do something in **MyComponent**.
 
-**toogle-component.js**
+Create **toogle-component.js** file
 ```js
 
 import React from 'react';
@@ -176,7 +176,7 @@ export default ToggleComponent
 
 ```
 
-**my-component.js**
+Create **my-component.js** file
 ```js
 
 import React, {useEffect, useRef} from 'react';

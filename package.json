@@ -1,6 +1,6 @@
 {
   "name": "toolazy-react-theme",
-  "version": "1.0.22",
+  "version": "1.0.23",
   "description": "Theme manager for React and React Native projects.",
   "main": "dist/index.js",
   "scripts": {

@@ -141,14 +141,16 @@ class MyComponent extends React.Component {
 | `Theme.getCurrentTheme()` | Return the current theme name. It's a string. |
 | `Theme.getTheme()` | Return the theme you're using. It's an object |
 
+&nbsp;
+&nbsp;
 
 # Tips Tricks
 You no need to use Redux to manage your themes. Say no to `connect()` `mapStateToProps` `mapDispatchToProps` if it's not needed. </br>
 You can `import Theme from 'path/to/theme.js'` and use all methods above.
 
 ### Tip 1: Detect your theme has been changed.
-Let's say you have 2 components called **MyComponent** and **ToggleComponent**
-**MyComponent** is using `theme` and **ToogleComponent** is not.
+Let's say you have 2 components called **MyComponent** and **ToggleComponent**. <br/>
+**MyComponent** is using `theme` and **ToogleComponent** is not. <br/>
 **ToggleComponent** make a change theme action. You need to detect and do something in **MyComponent**.
 
 **toogle-component.js**
@@ -201,7 +203,7 @@ export default withToolazyReactTheme()(MyComponent);
 ```
 
 As you can see, we have two separate components but When you click on the "Press me to Change Your Theme" button, `theme` will be changed and **MyComponet** updated. <br/>
-You can detect that change by using `useRef` and `useEffect` like above if it's React function component or you can <br/>
+You can detect that change by using `useRef` and `useEffect` like above if it's React function component or you can 
 use `componentDidUpdate(prevProps)` for React class component and compare `if(prevProps.theme !== this.props.theme)` as well. <br/>
 
 &nbsp;

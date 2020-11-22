@@ -1,9 +1,10 @@
 <p align="center">
-  <img src="img/zoom.png" width=72 height=72>
+  <img src="assets/images/demo.gif">
 </p>
 
 # toolazy-react-theme
-> Theme manager for React and React Native projects.
+> Theme manager for **React** and **React Native** projects. <br/>
+> Make sure you are using React version 16.8.0 / React Native version 0.59 or higher.
 
 # Quick start
 We expect you having an existing react application - if not give [create-react-app](https://github.com/facebook/create-react-app) / [Create react native](https://reactnative.dev/docs/environment-setup) a try.

@@ -7,7 +7,7 @@
 > Make sure you are using React version 16.8.0 / React Native version 0.59 or higher.
 
 # Quick start
-We expect you having an existing react application - if not give [create-react-app](https://github.com/facebook/create-react-app) / [Create react native](https://reactnative.dev/docs/environment-setup) a try.
+We expect you having an existing react application - if not give [create-react-app](https://github.com/facebook/create-react-app) / [react-native init](https://reactnative.dev/docs/environment-setup) a try.
 I will show you step-by-step to use this library.
 
 ### First: Installation

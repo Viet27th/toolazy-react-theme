@@ -7,7 +7,10 @@
  */
 
 import React from 'react';
-import {getDisplayName} from './utils';
+import {
+  getDisplayName, 
+  toolazyReactTheme as coreToolazyReactTheme,
+} from './utils';
 import {useToolazyReactTheme} from './useToolazyReactTheme';
 
 /* eslint-disable */
@@ -18,6 +21,12 @@ export const withToolazyReactTheme = () => (WrappedComponent) => {
     let passDownProps = {
       ...rest,
       theme: theme,
+      toolazyReactTheme: {
+        changeTheme: coreToolazyReactTheme.changeTheme,
+        getThemesResource: coreToolazyReactTheme.getThemesResource,
+        getCurrentTheme: coreToolazyReactTheme.getCurrentTheme,
+        getTheme: coreToolazyReactTheme.getTheme,
+      }
     };
     if (forwardedRef) {
       passDownProps.ref = forwardedRef;

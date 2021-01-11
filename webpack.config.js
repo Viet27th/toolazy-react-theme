@@ -54,7 +54,7 @@ module.exports = {
   },
   // Because you have been excluded these dependencies in the bundle file, but you need
   // to tell Webpack use these dependencies on the project which are using this bundle.
-  // This config for doing that.
+  // resolve.alias config for doing that.
   resolve: {
     alias: {
       react: path.resolve(__dirname, 'node_modules/react'),

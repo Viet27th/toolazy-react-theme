@@ -1,10 +1,10 @@
 /**
  * References you need to know before write a library for React:
- * - https://webpack.js.org/guides/author-libraries/#expose-the-library
  * To bundle a javascript library with Wepack.
+ * - https://webpack.js.org/guides/author-libraries/#expose-the-library
  * 
- * - https://medium.com/better-programming/how-to-publish-a-react-component-library-c89a07566770
  * All you need to know how to write a library for React like bundle, npm install local package, publish to npm.
+ * - https://medium.com/better-programming/how-to-publish-a-react-component-library-c89a07566770
  * 
  * - https://webpack.js.org/configuration/externals/
  * 
@@ -12,8 +12,9 @@
  * 
  * - https://flaviocopes.com/npm-peer-dependencies/
  * 
- * - https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557
  * Mooking import. The way to npm install a local library.
+ * - https://medium.com/dailyjs/how-to-use-npm-link-7375b6219557
+ * - https://medium.com/@AidThompsin/how-to-npm-link-to-a-local-version-of-your-dependency-84e82126667a
  * 
  * After you finish coding, bundle it, publish to npm and using it on another project. Suppose it is project A.
  * So, project A are using your library, you will get an Error: Minified React error #321,
